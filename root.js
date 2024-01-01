@@ -9,8 +9,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
-
+/*
 app.use('/static', express.static(path.join(__dirname, 'public')));
+
+*/
 
 // Routes
 app.get('/', (req, res) => {
