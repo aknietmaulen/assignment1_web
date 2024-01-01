@@ -9,18 +9,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
-/*
-app.use('/static', express.static(path.join(__dirname, 'public')));
-
-*/
 
 // Routes
 app.get('/', (req, res) => {
+    // Serve the home page
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 app.route('/bmicalculator')
     .get((req, res) => {
+        // Serve the BMI calculator page
         res.sendFile(path.join(__dirname, 'views', 'index.html'));
     })
     .post((req, res) => {
