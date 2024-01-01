@@ -1,17 +1,17 @@
 {
-  "name": "assignment1_web",
+  "name": "assign1_clac",
   "version": "1.0.0",
   "description": "",
-  "main": "root.js",
+  "main": "calculator.js",
   "scripts": {
+    "start": "node root.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bmi-calculator": "^1.0.0",
     "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2"
   }
 }
