@@ -16,7 +16,7 @@ function calculateBMI() {
     // Assuming you have variables like height, weight, age, gender, and units defined
     const data = { height, weight, age, gender, units };
 
-    fetch('/bmicalculator', {
+    fetch('/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
