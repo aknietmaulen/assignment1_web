@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="/images/calc_logo.png">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>BMI Calculator</title>
+</head>
+<body>
+  <!-- navigation bar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
+      <div class="container-fluid mx-2">
+        <a class="navbar-brand ms-3" href="index.html">
+          <img src="/images/calc_logo.png" width="40" alt="Alt">
+        </a>
+        <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item mx-5">
+              <a class="nav-link active" href="index.html">BMI Calculator</a>
+            </li>
+            <li class="nav-item mx-5">
+              <a class="nav-link" href="#info">What is BMI</a>
+            </li>
+            <li class="nav-item mx-5">
+              <a class="nav-link" href="#contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+  <main class="main">
+    <div class="container-fluid mt-5 justify-content-center">
+      <div class="container-fluid px-0">
+        <div class="row-fluid mx-auto">
+            <div class="col-lg-7 col-md-10 col-sm-10 pt-5 pb-3 text-center mx-auto">
+              <h1 class="text display-1 text-bold"><strong>BMI CALCULATOR</strong></h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-6 col-md-6 col-sm-10 offset-md-3 mx-auto">
+              <form id="bmiForm">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-outline-dark">
+                          <input type="radio" name="gender" id="male" value="male"><i class="fas fa-mars"></i> Male
+                      </label>
+                      <label class="btn btn-outline-dark">
+                          <input type="radio" name="gender" id="female" value="female"><i class="fas fa-venus"></i> Female
+                      </label>
+                  </div>
+
+                  <div class="form-group mt-3">
+                      <label for="age">Age</label>
+                      <input type="number" class="form-control" id="age" name="age" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="height">Height</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="height" name="height" required>
+                        <div class="input-group-append px-2">
+                            <span class="text">cm</span>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="weight">Weight</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="weight" name="weight" required>
+                        <div class="input-group-append px-2">
+                            <span class="text">kg</span>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="units">Units</label>
+                    <select class="form-control" id="units" name="units" onchange="changeUnits()" required>
+                        <option value="metric">Metric</option>
+                        <option value="imperial">Imperial</option>
+                    </select>
+                  </div>
+                  <div class="my-5">
+                    <button type="button" class="btn btn-dark" onclick="calculateBMI()">Calculate BMI</button>
+                  </div>
+              </form>
+
+              <div id="result" class="mt-3">
+                <p><strong>BMI:</strong> <span id="bmiResult"></span></p>
+                <p><strong>Interpretation:</strong> <span id="interpretation"></span></p>
+              </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div id="info" class="col-lg-10 col-md-10 col-sm-10 pt-5 pb-3 text-center mx-auto">
+            <h1 class="text display-3 text-bold"><strong>WHAT IS BMI?</strong></h1>
+            <p class="text">BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range the value falls between. These ranges of BMI vary based on factors such as region and age, and are sometimes further divided into subcategories such as severely underweight or very severely obese. Being overweight or underweight can have significant health effects, so while BMI is an imperfect measure of healthy body weight, it is a useful indicator of whether any additional testing or action is required. Refer to the table below to see the different categories based on BMI that are used by the calculator.</p>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div id="info" class="col-lg-6 col-md-8 col-sm-10 pt-5 pb-3 mx-auto">  
+            <img src="images/body-mass-index.jpg" class="img-fluid" alt="BMI Image 1">
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div id="info" class="col-lg-6 col-md-8 col-sm-10 pt-5 pb-3 mx-auto">  
+            <img src="images/bmi2.jpg" class="img-fluid" alt="BMI Image 2">
+          </div>
+        </div>        
+      </div>
+    </div>
+  </main>
+  <!-- footer section -->
+  <footer id="contact" class="py-5">
+    <div class="container text-center col-md-9 col-sm-12">
+        <p>&copy; 2023 Akniet Maulen | SE-2204 </p>
+        <p>Contact: akniet.maulenova.2017@gmail.com</p>
+        <p>Connect with me: <a href="https://t.me/maulen_akniet" target="_blank">Telegram</a></p>
+        <p>Project Information: A BMI Calculator for a healthier life</p>
+        <p>Acknowledgments: Special thanks to me</p>
+    </div>
+  </footer>
+  <script type="module" src="/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
