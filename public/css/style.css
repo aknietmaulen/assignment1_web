@@ -1,9 +1,3 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-}
 
 .navbar a.nav-link {
     margin-left: 35px;
@@ -42,30 +36,6 @@ footer {
 
 h1, h3, p {
     margin: 0;
-}
-
-.main-btn {
-    display: inline-block;
-    padding: 0.625rem 1.875rem;
-    line-height: 1.5625rem;
-    background-color: cornsilk;
-    border: 0.1875rem solid black;
-    color: black;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    text-transform: capitalize;
-}
-
-.sec-btn {
-    display: inline-block;
-    padding: 0.625rem 1.875rem;
-    line-height: 1.5625rem;
-    background-color: black;
-    border: 0.1875rem solid white;
-    color: white;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    text-decoration: none;
 }
 
 .main-btn:hover {
